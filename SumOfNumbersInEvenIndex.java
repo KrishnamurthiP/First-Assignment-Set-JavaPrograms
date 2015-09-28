@@ -1,6 +1,8 @@
 
 
-import java.io.*;       //The First line tells about importing required package
+import java.io.*;       
+import java.util.Scanner;				//The First two lines tells about importing required package
+
 
 
 
@@ -13,7 +15,8 @@ class SumOfNumbersInEvenIndex					//class definition of SumOfNumbersInEvenIndex 
 
 
 
-	//In this program, a sample of 10 integer values are assigned to an integer array.
+	//In this program, some integer values are accepted from user & assigned to an integer array.
+
 
         //The Sum of Numbers in the even index of the integer array is calculated and printed as output.
 
@@ -21,25 +24,44 @@ class SumOfNumbersInEvenIndex					//class definition of SumOfNumbersInEvenIndex 
         //declaring variables
   
 	
-	int numbersArray[]={10,20,30,40,50,60,70,80,90,100};
+	int numbersArray[]=new int[20];		//this array can hold upto 20 integer values.
 	int sumOfNumbers=0;
+	short size=0;
 
 
-        System.out.println("\n This program adds numbers in the even index of the integer array & prints it. ");
-        System.out.println(" ----------------------------------------------------------------------------- ");
+
+        System.out.println("\n Program Decription: This program adds numbers in the even index \n of the integer array & prints it. ");
 
        
 
-	System.out.println("\n-------------------------------------------------------------- ");
+	Scanner in = new Scanner(System.in);
+
+        	
+	System.out.println(" Enter the size of the array(maximum size is 20) : ");
+	
+	size=in.nextShort();							 //getting size of array. value can be upto 20.
+
+
+
+	System.out.println("\n Enter the Values: ");
+        
+	for(int i=0;i<size;i++)
+         {
+
+	   numbersArray[i]=in.nextInt();           				//accepting Integer Values for the array. 
+
+         }
+
+
 
         System.out.println("\n Output: ");					//displaying output
         System.out.println(" ------- ");
 
 	
-	System.out.println("\n 10 integer numbers that have been assigned to the array are as follows: \n");
+	System.out.println("\n The integer numbers that have been assigned to the array are as follows: \n");
 
 
-        for(int i=0;i<10;i++)						//for loop begins
+        for(int i=0;i<size;i++)						//for loop begins
          {
 
            System.out.println("Index Position of the Number: "+i+", Number Value: "+numbersArray[i]);
